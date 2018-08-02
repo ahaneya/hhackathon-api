@@ -71,6 +71,28 @@ app.get('/queryById/haj_id=:hajId', function(req,res){
     }
 })
 
+app.put('/confirm/submission/', function(req,res) {
+    inData ={
+        haj_id: req.body.haj_id,
+        lost: req.body.lost,
+        lat: req.body.lat,
+        lng: req.body.lng,
+        update_dttm: req.body.update_dttm,
+        updated_by: req.body.updated_by
+    }
+    if(!inData) {
+        res.status(500).send("Please enter some data");
+    } else {
+        haj.findOneAndUpdate({haj_id: inData.haj_id}, {lat: inData.lat, lng: inData.lng, updated_by: inData.update_dttm}, function(err, updatedDoc){
+            if(err) {
+                res.status(500).send(err);
+            } else {
+                res.status(200).send(updatedDoc)
+            }
+        })
+    }
+})
+
 // ###########  CRUD END #################
 app.listen(3000, function() {
     console.log("Node Js server is running");
