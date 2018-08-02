@@ -37,14 +37,14 @@ app.post('/NewHaj', function(req,res){
 })
 
 app.get('/queryById/haj_id=:hajId', function(req,res){
-    var haj_id_query = req.params.hajId;
-    if (!haj_id_query) {
+
+    if (!req.params.hajId) {
         res.status(500).send("Please enter Haj ID")
     } else {
         haj.find({haj_id: req.params.hajId}, function(err, data){
             if (err) {
                 res.status(500).send("Not Found")
-                console.log(haj_id_query);
+                console.log(req.params.hajId);
             } else{
                 res.status(200).send(data);
             }
