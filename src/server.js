@@ -85,7 +85,7 @@ app.put('/confirm/submission/', function(req,res) {
     } else {
         haj.findOneAndUpdate({haj_id: inData.haj_id}, {lat: inData.lat, lng: inData.lng, updated_by: inData.update_dttm}, function(err, updatedDoc){
             if(err) {
-                res.status(500).send(err);
+                res.status(500).send("updating db faild");
             } else {
                 res.status(200).send(updatedDoc)
             }
