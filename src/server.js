@@ -43,6 +43,8 @@ app.post('/NewHaj', function(req,res){
         mobile : req.body.mobile,
         lost : req.body.lost,
         rel_haj_id : req.body.rel_haj_id,
+        lat:req.body.lat,
+        lng:req.body.lng
         // superuser_id : req.body.superuser_id
     } 
 
