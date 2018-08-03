@@ -9,10 +9,8 @@ var haj = new schema({
     haj_last_name: {type: String, required: true},
     country: {type: String, required: true},
     mobile: Number,
-
-    lng: String,
-    lat: String,
-
+    lng: Number,
+    lat: Number,
     lost: Boolean,
     rel_haj_id: Number,
     Superuser_id: [{type: ObjectId, ref: 'User'}],
