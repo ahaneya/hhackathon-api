@@ -21,10 +21,10 @@
   "homepage": "https://github.com/ahaneya/hhackathon-api#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "mon": "0.0.8",
-    "mongoose": "^5.2.6",
-    "node": "^10.8.0",
-    "nodemon": "^1.18.3"
+    "mongoose": "^5.4.12",
+    "node": "^10.15.1",
+    "nodemon": "^1.18.10"
   }
 }
